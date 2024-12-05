@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+    <link rel="stylesheet" href="{% static 'css/std1.css' %}">
+</head>
+<body>
+<div class="container" align="center">
+    {% if submitted %}
+    <h1>Student records with name:{{sname}} submitted successfully</h1>
+    <h2>Enter next student details</h2>
+    {% else %}
+    <h1>StudentInput Form</h1>
+    {% endif %}
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" name="" class="btn btn-primary" value="Submit">
+    </form>
+</div>
+</body>
+</html>
